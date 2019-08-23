@@ -1,0 +1,25 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+        name: abc1
+        namespace: dev
+        labels:
+                color: orange 
+spec:
+        replicas: 3
+        selector:
+                matchLabels:
+                        color: orange
+        template:
+                metadata:
+                        labels:
+                                color: orange
+                spec:
+                        containers:
+                                - name: abc-container
+                                  image: gcr.io/amresh007/resume
+                                  ports:
+                                          - containerPort: 80
+
+        
+
